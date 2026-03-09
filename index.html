@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
 
     <!-- bootstrap CDN -->
     <link
@@ -21,12 +20,102 @@
       referrerpolicy="no-referrer"
     />
 
+    <style>
+      .wrapper {
+        background: linear-gradient(
+          rgba(255, 0, 0, 0.814),
+          rgba(128, 0, 128, 0.834)
+        );
+        min-height: 100vh;
+      }
+
+      .table {
+        --bs-body-bg: transparent;
+      }
+    </style>
     <title>Time Tracker</title>
   </head>
-  <div class="wrapper">
-    <h1>Time tracker</h1>
+  <div class="wrapper pt-5">
+    <div class="container">
+      <!-- title -->
+      <h1 class="text-center">Time tracker</h1>
 
-    <button class="btn btn-danger">click me</button>
+      <!-- form -->
+      <form
+        action="javascript:void(0)"
+        onsubmit="handleOnSubmit(this)"
+        class="border rounded-5 shadow-lg p-5 mt-5"
+      >
+        <div class="row g-3">
+          <div class="col-md-7">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Task "
+              aria-label="task"
+              name="task"
+              id="task"
+            />
+          </div>
+          <div class="col-md-2">
+            <input
+              type="number"
+              class="form-control"
+              placeholder="40"
+              aria-label="hr"
+              min="1"
+              name="hr"
+              id="hr"
+            />
+          </div>
+
+          <div class="col-md-3 d-grid">
+            <button class="btn btn-primary">Add New Task</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- tables -->
+
+      <div class="row mt-5">
+        <div class="col">
+          <h3 class="text-center">Entry list</h3>
+          <hr />
+
+          <!-- entry list  -->
+          <table class="table table-striped table-hover border">
+            <tbody id="entryList"></tbody>
+          </table>
+        </div>
+        <div class="col">
+          <h3 class="text-center">Bad list</h3>
+          <hr />
+
+          <!-- Bad list  -->
+          <table class="table table-striped table-hover border">
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>sleeping</td>
+                <td>40hrs</td>
+                <td class="text-end">
+                  <button class="btn btn-warning">
+                    <i class="fa-solid fa-arrow-left"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="alert alert-success">You could have save 40 hours</div>
+        </div>
+      </div>
+
+      <div class="alert alert-success">Total hours allocated = 40 hr</div>
+    </div>
   </div>
 
   <body>

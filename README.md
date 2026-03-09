@@ -1,4 +1,4 @@
-# Not to do list
+# Time Tracker
 
 Talk about the project
 
