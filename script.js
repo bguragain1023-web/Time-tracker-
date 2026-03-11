@@ -134,7 +134,3 @@ const ttlHours = () => {
 
   return totalHours;
 };
-
-// const savedHours = () => {
-
-// };
